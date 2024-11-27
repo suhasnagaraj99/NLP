@@ -8,14 +8,9 @@ import pandas as pd
 import os
 
 class TextToTextDataset(Dataset):
-    def __init__(self, csv_file, tokenizer, split='train', test_size=0.2):
+    def __init__(self, csv_file, tokenizer):
         self.data = pd.read_csv(csv_file)
         self.tokenizer = tokenizer
-        split_idx = int(len(self.data) * (1 - test_size))
-        if split == 'train':
-            self.data = self.data[:split_idx]
-        else:
-            self.data = self.data[split_idx:]
 
     def __len__(self):
         return len(self.data)
@@ -37,8 +32,8 @@ model_checkpoint = "t5-small"
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
 
-train_dataset = TextToTextDataset("/content/drive/My Drive/NLP/Final_Project/sampled_dataset.csv", tokenizer, split='train')
-eval_dataset = TextToTextDataset("/content/drive/My Drive/NLP/Final_Project/sampled_dataset.csv", tokenizer, split='test')
+train_dataset = TextToTextDataset("./Training/sample_dataset_training.csv", tokenizer)
+eval_dataset = TextToTextDataset("./Validation/sample_dataset_validation.csv", tokenizer)
 
 data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
 
