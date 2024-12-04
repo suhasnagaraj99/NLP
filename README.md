@@ -6,6 +6,9 @@
 - The model weights will get saved in `trained_model` folder.
 - Please use the `eval.py` to get the validation accuracy. Please ensure correct path for dataset and trained model.
 
+## Trained Model
+A t5-small has been trained (finetuned) on the dataset for 25 epochs. The trained model weights can be downloded from here : https://drive.google.com/drive/folders/1ihN6l--ssXrgF_nRLTyhyJI40tR30n7w?usp=sharing
+
 ## Docker Setup Instructions
 
 1. **Run the following lines of code to set up the docker image and build a container**
