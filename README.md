@@ -51,12 +51,12 @@ A t5-small model has been trained (finetuned) on the dataset for 25 epochs. The 
    
 5. **Give the text input in the terminal and wait for the node to get the battery order**:
    
-6. **Launch the file `tbot_get_goals` (node) to get the waypoints/goals**:
+6. **Launch the file `get_goals` (node) to get the waypoints/goals**:
    ```bash
    ros2 run py_nlp get_goals
    ```
 
-7. **Run the node `tbot_through_poses` to call action `NavigateThroughPoses` for navigation**
+7. **Run the node `waypoints` to call action for navigation**
    ```bash
    ros2 run py_nlp waypoints
    ``` 
