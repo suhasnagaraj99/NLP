@@ -273,7 +273,138 @@ Reach [battery2], positioned between [battery1] and [battery3]; this sequence su
 
 Navigate toward [battery2], coming after [battery1] and before [battery3]; this chain is then continued by visits to [battery4] and finally [battery5].
 
+Go to the [battery1] and check its status.
 
+Visit the [battery1] to perform a quick inspection.
+
+Head to the [battery1] as your only destination for this task.
+
+Start your mission by reaching [battery1] and taking necessary notes.
+
+Make your way to the [battery1] and assess its condition.
+
+Your sole destination is [battery1]; ensure to check it thoroughly.
+
+Reach [battery1] and record any anomalies during your inspection.
+
+The task begins and ends at [battery1]; perform all checks there.
+
+Start by reaching [battery1] and remain there to complete your task.
+
+Visit [battery1] and perform a full diagnostic check.
+
+Navigate to [battery1] and confirm its functionality.
+
+The [battery1] is your only checkpoint for this task—inspect it thoroughly.
+
+Begin with [battery1] and complete all required tasks at this location.
+
+Head over to [battery1] for an in-depth examination.
+
+Start at [battery1] and finish there after completing your observations.
+
+Locate the [battery1] and confirm its readings are within range.
+
+Start at the [battery1] and finish at the [battery2].
+
+Your task is to visit [battery1] first and then move to [battery2].
+
+Begin with [battery1], then head over to [battery2].
+
+Start by visiting [battery1], then complete your task at [battery2].
+
+Begin your journey at [battery1] and end it at [battery2].
+
+Starting with [battery1], ensure that all indicators are functioning correctly before heading over to [battery2] for further inspection.
+
+The route begins at [battery1], where you must confirm its operational status, and ends at [battery2] with a thorough final check.
+
+Visit [battery1] as your starting point, ensuring it meets all performance criteria, and then head to [battery2] for final confirmation.
+
+Before you go to [battery2], make sure to stop by [battery1].
+
+Visit [battery1] first, then proceed to [battery2] as the next stop.
+
+Although [battery2] is the destination, begin by inspecting [battery1].
+
+[battery2] is your next stop, but check [battery1] before heading there.
+
+While your journey will eventually take you to [battery2], it’s essential to start at [battery1] for a thorough inspection.
+
+Before reaching [battery2] to complete the task, ensure that you visit [battery1] for the initial check.
+
+Although [battery2] is the designated destination, begin with a careful evaluation of [battery1] before continuing onward.
+
+[battery2] should be your next location, but only after completing all necessary checks at [battery1].
+
+Ensure you stop at [battery1] to perform a detailed analysis before proceeding to [battery2] to finalize the process.
+
+Visit [battery1] first, then move to [battery2], and afterward head to [battery3].
+
+Begin at [battery1], head to [battery2] next, and conclude your task at [battery3].
+
+First, stop by [battery1], then visit [battery2], and wrap up at [battery3].
+
+Begin your journey at [battery1], ensuring a thorough check, then continue to [battery2] for a detailed inspection, and finally proceed to [battery3] to complete the sequence.
+
+Start at [battery1], complete the necessary evaluations, then make your way to [battery2] to gather further data, and conclude at [battery3] with a final analysis.
+
+Your path begins with a detailed inspection at [battery1], after which you should navigate to [battery2] for further checks, and then proceed to [battery3] for final verification.
+
+Ensure that you visit [battery1] first to perform the initial check, then proceed to [battery2] to confirm its status, and complete your task at [battery3] with a comprehensive review.
+
+The task requires you to begin at [battery1], continue to [battery2] for an intermediate evaluation, and conclude your journey at [battery3] with a thorough final assessment.
+
+Your final destination is [battery3], which is preceded by [battery2], and the journey starts at [battery1].
+
+You will end at [battery3], but only after visiting [battery1] and [battery2].
+
+Although [battery3] is your final stop, your journey begins at [battery1] and continues through [battery2].
+
+Start at [battery1], proceed to [battery2], and then finish at [battery3], your last destination.
+
+[battery3] will be your last destination after visiting [battery1] and [battery2].
+
+Your journey concludes at [battery3], which comes after [battery1] and [battery2].
+
+The task culminates at [battery3], but you need to begin at [battery1] and make a stop at [battery2] before reaching it.
+
+Even though [battery3] is the last stop, your route starts with [battery1], followed by [battery2].
+
+Your journey ends at [battery3], but it starts at [battery1] and continues through [battery2] before reaching the final point.
+
+Your route concludes at [battery4], but it starts at [battery1], goes through [battery2], and passes [battery3].
+
+Even though [battery4] is mentioned first, begin at [battery1], proceed to [battery2], visit [battery3], and finish there.
+
+Start at [battery1], then go to [battery2] and [battery3], and finally finish at [battery4].
+
+Although [battery4] is highlighted as the goal, the task begins with [battery1], continues to [battery2], passes through [battery3].
+
+Your journey culminates at [battery4], but it requires beginning at [battery1], progressing through [battery2], and stopping at [battery3] first.
+
+Visit [battery3] next, followed by [battery4], but first, stop by [battery2] after starting at [battery1].
+
+[battery3] should be visited before [battery4], but only after going to [battery2], which is preceded by [battery1].
+
+Your journey takes you to [battery3], followed by [battery4], but starts with [battery1] and [battery2].
+
+Begin your task at [battery1], continue to [battery2], then proceed to [battery3], which is immediately followed by [battery4].
+
+[battery3], which is followed by [battery4], should only be visited after completing your checks at [battery1] and [battery2].
+
+Although [battery3] comes before [battery4], you must first visit [battery1], then [battery2], to complete the sequence correctly.
+
+Your journey involves visiting [battery3] and later [battery4], but ensure you start at [battery1] and proceed through [battery2] first.
+
+The sequence begins at [battery1], continues to [battery2], then moves to [battery3], which is immediately followed by [battery4].
+
+
+Your journey culminates at [battery4], but it requires beginning at [battery1], progressing through [battery2], and stopping at [battery3] first.
+
+While [battery4] is mentioned first, you must start at [battery1], visit [battery2], proceed to [battery3], and only then reach [battery4].
+
+[battery4] is your final stop, but to get there, you must start at [battery1], visit [battery2] next, and proceed to [battery3].
 
 
 

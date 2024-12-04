@@ -32,9 +32,11 @@ model_checkpoint = "t5-small"
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
 
-train_dataset = TextToTextDataset("./Training/sample_dataset_training.csv", tokenizer)
-eval_dataset = TextToTextDataset("./Validation/sample_dataset_validation.csv", tokenizer)
+# train_dataset = TextToTextDataset("./Training/sample_dataset_training.csv", tokenizer)
+# eval_dataset = TextToTextDataset("./Validation/sample_dataset_validation.csv", tokenizer)
 
+train_dataset = TextToTextDataset("./Training/navigation_dataset_Training.csv", tokenizer)
+eval_dataset = TextToTextDataset("./Validation/navigation_dataset_Validation.csv", tokenizer)
 data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
 
 training_args = Seq2SeqTrainingArguments(
