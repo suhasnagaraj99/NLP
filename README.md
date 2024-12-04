@@ -1,5 +1,11 @@
 # NLP
 
+## Training and Evaluation
+
+- Please use the `nlp_train.py` to train the model. Please ensure correct path for dataset.
+- The model weights will get saved in `trained_model` folder.
+- Please use the `eval.py` to get the validation accuracy. Please ensure correct path for dataset and trained model.
+
 ## Docker Setup Instructions
 
 1. **Run the following lines of code to set up the docker image and build a container**
@@ -44,9 +50,10 @@
    
 6. **Launch the file `tbot_get_goals` (node) to get the waypoints/goals**:
    ```bash
-   ros2 run group5_final tbot_get_goals
+   ros2 run py_nlp get_goals
    ```
 
 7. **Run the node `tbot_through_poses` to call action `NavigateThroughPoses` for navigation**
    ```bash
-   ros2 run group5_final tbot_through_poses 
+   ros2 run py_nlp waypoints
+   ``` 
