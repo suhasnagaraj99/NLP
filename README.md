@@ -1,62 +1,130 @@
-# NLP
+# **Adaptive Text-to-Command Translation for Robot Navigation**
 
-## Training and Evaluation
+## **Overview**
+This project extends [Autonomous Mobile Robot Navigation](https://github.com/suhasnagaraj99/Autonomous-Mobile-Robot-Navigation) by integrating **Natural Language Processing (NLP)** for command-based navigation in a simulated environment. The system fine-tunes a **T5-Small model** to convert natural language instructions into structured navigation commands, enabling a **TurtleBot3** robot to execute multi-step navigation tasks.
 
-- Please use the `nlp_train.py` to train the model. Please ensure correct path for dataset.
-- The model weights will get saved in `trained_model` folder.
-- Please use the `eval.py` to get the validation accuracy. Please ensure correct path for dataset and trained model.
+![alt text](https://github.com/suhasnagaraj99/NLP/blob/main/images/poster.png?raw=false)
 
-## Trained Model
-A t5-small model has been trained (finetuned) on the dataset for 25 epochs. The trained model weights can be downloded from here : https://drive.google.com/drive/folders/1ihN6l--ssXrgF_nRLTyhyJI40tR30n7w?usp=sharing
+### **Key Features**
+- **Fine-tuned T5-Small model** for converting text commands into waypoints.
+- **LoRA-based adaptation** for efficient fine-tuning with minimal computational cost.
+- **ROS2-based simulation** using Gazebo and RViz for real-world validation.
+- **Task-specific synthetic dataset** with over 24,581 navigation instructions.
 
-## Docker Setup Instructions
+---
 
-1. **Run the following lines of code to set up the docker image and build a container**
-   ```bash
-   docker pull suhasnagaraj1999/umd:nlp 
-   ```
-   ```bash
-   docker run -it --gpus all --net=host -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix --name nlp_container suhasnagaraj1999/umd:nlp
-   ```
-2. **To open multiple shells**:
-   ```bash
-   docker exec -it --env="DISPLAY=$DISPLAY"  nlp_container /bin/bash
-   ```
-4. **Source the ros workspace in all shells/terminals**:
-   ```bash
-   cd ~/ros2_ws
-   source install/setup.bash
-   ```
-   
-## Running the Simulation
+## **Training and Evaluation**
 
-1. **Launch Turtlebot3 Waffle in Gazebo (Custom World) and on RVIZ (with map)**:
-   ```bash
-   ros2 launch final_project final_project.launch.py use_sim_time:=True
-   ```
-   
-2. **Set the initial pose of the robot by clicking on `2D Pose Estimate` on RVIZ**:
+### **1. Finetune the NLP Model**
+
+- **Fine-Tuning the Entire T5 Model:**  
+  [Download the Notebook](https://github.com/suhasnagaraj99/NLP/blob/main/Scripts/Traning%20%26%20Validation/Fine_Tuning_Entire_T5.ipynb)
+
+- **LoRA-Based Fine-Tuning:**  
+  [Download the Notebook](https://github.com/suhasnagaraj99/NLP/blob/main/Scripts/Traning%20%26%20Validation/LORA_fine_tuning_T5.ipynb)
+
+### **2. Evaluate the Finetuned Model**
+
+- **Evaluation for Fine-Tuned T5:**  
+  [Download the Notebook](https://github.com/suhasnagaraj99/NLP/blob/main/Scripts/Testing/Fine_Tuning_Entire_T5_Test.ipynb)
+
+- **Evaluation for LoRA-Tuned T5:**  
+  [Download the Notebook](https://github.com/suhasnagaraj99/NLP/blob/main/Scripts/Testing/LORA_fine_tuning_T5_Test.ipynb)
+
+### **Note:**
+- The dataset can be downloaded from the current repository: [Dataset](https://github.com/suhasnagaraj99/NLP/tree/main/Dataset)
+- Ensure that the dataset and pre-trained models are correctly referenced before running these notebooks.
+- Ensure required libraries and dependencies are installed before running these files on local system.
+  
+---
+
+## **Trained Model**
+
+Download the the trained T5 Models from the following links:
+
+- [T5 Model](https://drive.google.com/drive/folders/1_g3VE7xYBWhKx2ryHSWstqdw_KEgPix1?usp=sharing)
+- [LoRA based T5 Model](https://drive.google.com/drive/folders/14s9XCch4XDVkprtSODFsP0ClbifRkEkR?usp=sharing)
+
+## **ROS2-Based Simulation**
+
+### **1. Setup Docker Environment**
+Pull and run the Docker image:
+```bash
+docker pull suhasnagaraj1999/umd:nlp 
+docker run -it --gpus all --net=host -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix --name nlp_container suhasnagaraj1999/umd:nlp
+```
+
+To open multiple shells inside the container:
+```bash
+docker exec -it --env="DISPLAY=$DISPLAY" nlp_container /bin/bash
+```
+
+### **2. Source the ROS2 Workspace**
+```bash
+cd ~/ros2_ws
+source install/setup.bash
+```
+
+### **3. Launch the Simulation**
+Start TurtleBot3 Waffle in Gazebo and RViz:
+```bash
+ros2 launch final_project final_project.launch.py use_sim_time:=True
+```
+- Set the initial pose using **`2D Pose Estimate`** in RViz:
 
 ![alt text](https://github.com/suhasnagaraj99/Autonomous-Mobile-Robot-Navigation/blob/main/initial_pose.png?raw=false)
-   
-3. **Launch the file `tbot_nodes.launch.py` to start the battery broadcasting nodes**:
-   ```bash
-   ros2 launch group5_final tbot_nodes.launch.py use_sim_time:=True
-   ```
 
-4. **Run the `list_pub` node to launch the publisher**:
-   ```bash
-   ros2 run llm_package list_pub 
-   ```
-   
-5. **Give the text input in the terminal and wait for the node to get the battery order**:
-   
-6. **Launch the file `get_goals` (node) to get the waypoints/goals**:
-   ```bash
-   ros2 run py_nlp get_goals
-   ```
+### **4. Run NLP-Based Navigation**
 
-7. **Run the node `waypoints` to call action for navigation**
-   ```bash
-   ros2 run py_nlp waypoints
-   ``` 
+- Start battery broadcasting nodes:
+  ```bash
+  ros2 launch group5_final tbot_nodes.launch.py use_sim_time:=True
+  ```
+- Start the publisher node:
+  ```bash
+  ros2 run llm_package list_pub
+  ```
+- Enter text commands in the terminal and wait for processing:
+![alt text](https://github.com/suhasnagaraj99/NLP/blob/main/images/text_input.png?raw=false)
+- Run the goal extraction node:
+  ```bash
+  ros2 run py_nlp get_goals
+  ```
+- Execute waypoint-based navigation:
+  ```bash
+  ros2 run py_nlp waypoints
+  ```
+![alt text](https://github.com/suhasnagaraj99/NLP/blob/main/images/moving_robot.png?raw=false)
+
+### **Note:**
+- Alternatively you can download the ROS2 packages from the following link: [Packages](https://drive.google.com/drive/folders/1U7xWgvSILd7OoGJMpwQPp-CUejlRGhaR?usp=sharing)
+- Please ensure that the trained models are downloaded and correctly referenced before running the packages outside docker
+
+---
+
+## **Results & Performance**
+
+The **T5-Small model** was fine-tuned for **25 epochs** on the synthetic dataset. Performance comparison:
+
+| Model                  | Sequence Accuracy | Position Accuracy | Training Time |
+|------------------------|------------------|------------------|---------------|
+| Baseline T5-Small     | 0%                | 0%               | N/A           |
+| Few-Shot Learning     | ~0%               | ~0%              | 336s          |
+| Full Fine-Tuning      | **100%**          | **100%**         | 4577s         |
+| LoRA Fine-Tuning      | **98.5%**         | **98.8%**        | 3415s         |
+
+> *LoRA-based fine-tuning achieved near-perfect results while reducing training time by 25%.*
+
+For more details, refer to our full **[Project Report](https://github.com/suhasnagaraj99/NLP/blob/main/NLP_Final_Project_Report.pdf).**
+
+---
+
+## **Acknowledgments**
+This project was completed as part of the **final project for CMSC723** under the guidance of **Professor Dr. Jordan Boyd-Graber** and **Dr. Naomi Feldman**. We sincerely thank them for their insights and support throughout the course.
+
+We also extend our gratitude to **Dr. Zied Kootbally** for allowing us to reuse some of his **ROS2 packages** for this project. Additionally, we appreciate the **University of Maryland (UMD)** for providing essential resources and support that enabled the successful completion of this work.
+
+---
+
+
+
